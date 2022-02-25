@@ -46,6 +46,8 @@ app.component('product-display', {
             <!-- <button class="button" @click="addToCart">Add to Cart</button> -->
         </div>
     </div>
+    <review-list v-if="reviews.length" :reviews="reviews"></review-list>
+    <review-form @review-submitted="addReview"></review-form>
 </div>
     `,
     props: {
@@ -76,7 +78,8 @@ app.component('product-display', {
                     quantity: 0
                 }
             ],
-            sizes: ['S', 'M', 'L', 'XL']
+            sizes: ['S', 'M', 'L', 'XL'],
+            reviews: []
         }
     },
     methods: {
@@ -89,6 +92,9 @@ app.component('product-display', {
         },
         removeFromCart() {
             this.$emit('remove-from-cart', this.variants[this.selectedVariant].id);
+        },
+        addReview(review) {
+            this.reviews.push(review);
         }
     },
     computed: {
