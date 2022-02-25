@@ -5,8 +5,8 @@ const app = Vue.createApp({
             product: 'Boots',
             image: './assets/images/socks_green.jpg',
             url: 'https://vuemastery.com',
-            // inStock: true
-            inventory: 100,
+            inStock: false,
+            inventory: 0,
             onSale: true,
             details: ['50% cotton', '30% wool', '20% polyester'],
             variants: [{
