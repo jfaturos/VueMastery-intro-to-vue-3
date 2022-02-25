@@ -29,6 +29,13 @@
                 <p v-else>Out of Stock</p>
                 <p v-if="onSale">On Sale</p>
                 <!-- <p v-show="onSale">On Sale</p> -->
+                <ul>
+                    <li v-for="detail in details">{{ detail }}</li>
+                </ul>
+                <ul>
+                    <li v-for="(size, index) in sizes" :key="index">{{ size }}</li>
+                </ul>
+                <div v-for="variant in variants" :key="variant.id">{{ variant.color }}</div>
                 <a v-bind:href="url">Made by Vue Mastery</a>
               </div>
             </div>
